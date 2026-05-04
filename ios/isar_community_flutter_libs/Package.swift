@@ -17,6 +17,9 @@ let package = Package(
             dependencies: ["isar"],
             resources: [
                 .process("Resources")
+            ],
+            linkerSettings: [
+                .unsafeFlags(["-u", "_isar_version"])
             ]
         )
     ]

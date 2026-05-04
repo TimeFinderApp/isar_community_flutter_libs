@@ -14,7 +14,10 @@ let package = Package(
         .binaryTarget(name: "isar", path: "isar.xcframework"),
         .target(
             name: "isar_community_flutter_libs",
-            dependencies: ["isar"]
+            dependencies: ["isar"],
+            linkerSettings: [
+                .unsafeFlags(["-u", "_isar_version"])
+            ]
         )
     ]
 )
