@@ -20,7 +20,7 @@ let package = Package(
                 .process("PrivacyInfo.xcprivacy"),
             ],
             linkerSettings: [
-                .unsafeFlags(["-u", "_isar_version"])
+                .unsafeFlags(["-Xlinker", "-u", "-Xlinker", "_isar_version"])
             ]
         ),
         .binaryTarget(
